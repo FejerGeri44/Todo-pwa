@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Arial, sans-serif;
+  --font-m: 1rem;
+
+  --primary: #c5a37d;
+  --primary-rgb: 197, 163, 125;
+
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --input-bg: #fff;
+}
+
+body.dark-theme {
+  --background: #0f172a;
+  --surface: #1e293b;
+  --border: #334155;
+
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --input-bg: #1e293b;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: var(--font-m);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  animation: fadeIn 0.2s;
+}
+
+.modal {
+  background: var(--surface);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+
+    .btn-close {
+      color: var(--text-muted);
+      &:hover { background: rgba(0,0,0,0.05); }
+    }
+  }
+
+  .body {
+    background: var(--surface);
+
+    input, select {
+      background: var(--input-bg);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+
+      &:focus { border-color: var(--primary); }
+    }
+
+    label { color: var(--text-main); }
+  }
+
+  .actions {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+}
+
+.text-l { font-size: 1.25rem; font-weight: 700; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
