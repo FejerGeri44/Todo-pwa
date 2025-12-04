@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { AlertComponent } from "./core/shared/services/alert/alert.component";
 import { SettingsComponent } from "./core/shared/services/settings/settings.component";
 import { TaskManagerComponent } from "./core/shared/services/task-manager/task-manager.component";
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
